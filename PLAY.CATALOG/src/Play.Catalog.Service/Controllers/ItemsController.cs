@@ -47,7 +47,7 @@ namespace Play.Catalog.Service.Controllers
 
             await itemsRepository.CreateAsync(item);
 
-            return CreatedAtAction(nameof(GetByIdAsync),new {id = item.id} , item);
+            return CreatedAtAction(nameof(GetByIdAsync),new {id = item.Id} , item);
         }
 
         [HttpPut("{id}")]
