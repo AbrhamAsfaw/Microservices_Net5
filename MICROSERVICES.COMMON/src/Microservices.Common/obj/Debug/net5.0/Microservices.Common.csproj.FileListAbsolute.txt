@@ -1,0 +1,12 @@
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/bin/Debug/net5.0/Microservices.Common.deps.json
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/bin/Debug/net5.0/Microservices.Common.dll
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/bin/Debug/net5.0/ref/Microservices.Common.dll
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/bin/Debug/net5.0/Microservices.Common.pdb
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/obj/Debug/net5.0/Microservices.Common.csproj.AssemblyReference.cache
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/obj/Debug/net5.0/Microservices.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/obj/Debug/net5.0/Microservices.Common.AssemblyInfoInputs.cache
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/obj/Debug/net5.0/Microservices.Common.AssemblyInfo.cs
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/obj/Debug/net5.0/Microservices.Common.csproj.CoreCompileInputs.cache
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/obj/Debug/net5.0/Microservices.Common.dll
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/obj/Debug/net5.0/ref/Microservices.Common.dll
+/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/obj/Debug/net5.0/Microservices.Common.pdb

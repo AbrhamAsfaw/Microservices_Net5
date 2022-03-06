@@ -1,4 +1,5 @@
 using System;
+using Microservices.Common;
 
 namespace Play.Catalog.Service.Entities
 {

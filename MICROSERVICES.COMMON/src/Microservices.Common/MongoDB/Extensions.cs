@@ -1,13 +1,12 @@
+using Microservices.Common.Settings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
-using Play.Catalog.Service.Entities;
-using Play.Catalog.Service.Settings;
 
-namespace Play.Catalog.Service.Repositories
+namespace Microservices.Common.MongoDB
 {
     public static class Extensions
     {

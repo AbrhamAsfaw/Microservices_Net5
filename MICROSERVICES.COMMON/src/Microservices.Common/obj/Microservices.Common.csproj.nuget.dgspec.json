@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/Desktop/Net_Projects/Microservice/PLAY.CATALOG/src/Play.Catalog.Service/Play.Catalog.Service.csproj": {}
+    "/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/Microservices.Common.csproj": {}
   },
   "projects": {
-    "/Users/mac/Desktop/Net_Projects/Microservice/PLAY.CATALOG/src/Play.Catalog.Service/Play.Catalog.Service.csproj": {
+    "/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/Microservices.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/Desktop/Net_Projects/Microservice/PLAY.CATALOG/src/Play.Catalog.Service/Play.Catalog.Service.csproj",
-        "projectName": "Play.Catalog.Service",
-        "projectPath": "/Users/mac/Desktop/Net_Projects/Microservice/PLAY.CATALOG/src/Play.Catalog.Service/Play.Catalog.Service.csproj",
+        "projectUniqueName": "/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/Microservices.Common.csproj",
+        "projectName": "Microservices.Common",
+        "projectPath": "/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/Microservices.Common.csproj",
         "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/Desktop/Net_Projects/Microservice/PLAY.CATALOG/src/Play.Catalog.Service/obj/",
+        "outputPath": "/Users/mac/Desktop/Net_Projects/Microservice/MICROSERVICES.COMMON/src/Microservices.Common/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mac/.nuget/NuGet/NuGet.Config"
@@ -20,7 +20,6 @@
           "net5.0"
         ],
         "sources": {
-          "/Users/mac/Desktop/Net_Projects/Microservice/Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,13 +38,21 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Microservices.Common": {
+            "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[6.0.0, )"
             },
-            "Swashbuckle.AspNetCore": {
+            "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.14.1, )"
             }
           },
           "imports": [
@@ -59,9 +66,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
