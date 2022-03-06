@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using Play.Catalog.Service.Entities;
-// using System.Collections.Generic;
-// using System.Linq;
-// using System.Threading.Tasks;
-
 
 namespace Play.Catalog.Service.Repositories
 {
