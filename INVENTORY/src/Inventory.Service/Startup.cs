@@ -1,4 +1,5 @@
 using System;
+using System.Net.Http;
 using Inventory.Service.Clients;
 using Inventory.Service.Entities;
 using Microservices.Common.MongoDB;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Polly;
 
 namespace Inventory.Service
 {
@@ -17,7 +19,6 @@ namespace Inventory.Service
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -28,8 +29,8 @@ namespace Inventory.Service
             services.AddHttpClient<CatalogClient>(client => 
             {
                 client.BaseAddress = new Uri ("https://localhost/5001");
-
-            });        
+            })
+            .AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(1));      
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
