@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Polly;
 
@@ -30,6 +31,22 @@ namespace Inventory.Service
             {
                 client.BaseAddress = new Uri ("https://localhost/5001");
             })
+            .AddTransientHttpErrorPolicy(builder => builder.Or<TimeoutException>().CircuitBreakerAsync(
+                3,
+                TimeSpan.FromSeconds(10),
+                onBreak: (outcome , timespan) =>
+                {
+                    var serviceProvider = services.BuildServiceProvider();
+                    serviceProvider.GetService<ILogger<CatalogClient>>()?
+                        .LogWarning($"Closing Circuit for {timespan.TotalSeconds} seconds..");
+                },
+                onReset: () =>
+                {
+                    var serviceProvider = services.BuildServiceProvider();
+                    serviceProvider.GetService<ILogger<CatalogClient>>()?
+                        .LogWarning($"Closing Circuit ");
+                }
+            ))
             .AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(1));      
 
             services.AddControllers();
