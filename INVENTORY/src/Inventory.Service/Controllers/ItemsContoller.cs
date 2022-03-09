@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Inventory.Service.Clients;
 using Inventory.Service.Dtos;
 using Inventory.Service.Entities;
 using Microservices.Common;
@@ -15,9 +16,12 @@ namespace Inventory.Service.Controllers
     {
         private readonly IRepository<InventoryItem> itemsRepository;
 
-        public ItemsContoller(IRepository<InventoryItem> itemsRepository)
+        private readonly CatalogClient catalogClient;
+
+        public ItemsContoller(IRepository<InventoryItem> itemsRepository, CatalogClient catalogClient)
         {
             this.itemsRepository = itemsRepository;
+            this.catalogClient = catalogClient;
         }
 
         [HttpGet]
@@ -28,9 +32,15 @@ namespace Inventory.Service.Controllers
                 return BadRequest();
             }
 
-            var items = (await itemsRepository.GetAllAsync(item => item.UserId == userId)).Select(item => item.AsDto());
+            var catalogItems = await catalogClient.GetCatalogItemDtosAsync();
+            var inventoryItemEntities = await itemsRepository.GetAllAsync(item => item.UserId == userId);
+            var InventoryItemDtos = inventoryItemEntities.Select(inventoryItem => 
+            {
+                var catalogItem = catalogItems.Single(catalogItem => catalogItem.id == inventoryItem.CatalogItemId);
+                return inventoryItem.AsDto(catalogItem.Name ,catalogItem.Description);
+            });
 
-            return Ok(items);
+            return Ok(InventoryItemDtos);
 
         }
 
